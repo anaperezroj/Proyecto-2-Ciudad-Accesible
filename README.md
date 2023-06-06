@@ -1,6 +1,6 @@
 # Ciudad más accesible
 
-Este programa consiste en una API para conseguir una ciudad más accesible, donde indicamos los posibles problemas que encontremos de accesibilidad en la ciudad y así poder resolverlos y hacer una ciudad para todos los ciudadanos.
+API diseñada para mejorar la accesibilidad en la ciudad, permitiendo a los usuarios registrados y anónimos denunciar problemas de accesibilidad en lugares específicos. Los usuarios pueden seleccionar una ciudad y ver una lista de problemas activos y resueltos. La API aborda de manera efectiva los problemas informados, con el objetivo de crear un entorno inclusivo.
 
 ## Instalar
 
@@ -12,9 +12,9 @@ Este programa consiste en una API para conseguir una ciudad más accesible, dond
 
 - Ejecutar `npm run initDB` para crear las tablas necesarias en la base de datos anteriormente creada.
 
-- Ejecutar `npm run dev` o `npm start` para lanzar el servidor.
+- Ejecutar `npm run dev` para lanzar el servidor.
 
-- SÚPER IMPORTANTE! ENVIAR LA COLECCIÓN DE POSTMAN JUNTO AL PROYECTO Y MIENTRAS CREAMOS LOS EMPOINTS IR GUARDANDO!!!!
+- Importar la colección de Postman para poder probar los endpoints.
 
 ## Base de datos
 
