@@ -28,7 +28,7 @@ API diseñada para mejorar la accesibilidad en la ciudad, permitiendo a los usua
   - createdAt
   - modifiedAt
 
-- Entries
+- Entries:
 
   - id
   - title
@@ -41,7 +41,7 @@ API diseñada para mejorar la accesibilidad en la ciudad, permitiendo a los usua
   - createdAt
   - modifiedAt
 
-- EntryPhotos
+- EntryPhotos:
 
   - id
   - name 
@@ -49,7 +49,7 @@ API diseñada para mejorar la accesibilidad en la ciudad, permitiendo a los usua
   - createdAt
   - modifiedAt
 
-- Likes: (opcional)
+- Likes: 
 
   - id
   - userId
@@ -63,14 +63,14 @@ API diseñada para mejorar la accesibilidad en la ciudad, permitiendo a los usua
 - POST [/users/login] - Login de usuario (devuelve token). 
 - GET [/users] - Devuelve información del usuario del token. **TOKEN** 
 
-### Endpoints Entries
+### Endpoints Entries:
 
 - POST [/entries] - Crea una entrada (solo admin TIENE **TOKEN**)
-- GET [/entries] - Retorna el listado de entradas (opcional añadir algún tipo de filtros)
-- GET [/entries/:entryId] - Retorna una entrada en concreto
-- POST [/entries/:entryId/likes] - Likea una entrada **TOKEN**
-- DELETE [/entries/:entryId/likes] -Deslikea una entrada **TOKEN**
-- POST [entries/:entryId/photos] - Agregar una foto a una entrada **TOKEN** (opcional)
-- DELETE [/entries/:entryId/photos] -Borra una foto de una entrada **TOKEN**
-- PUT [/entries/:entryId/resolves] - Marca un problema de accesibilidad como resuelto
+- GET [/entries] - Retorna el listado de entradas.
+- GET [/entries/:entryId] - Retorna una entrada en concreto.
+- POST [/entries/:entryId/likes] - Likea una entrada. **TOKEN**
+- DELETE [/entries/:entryId/likes] -Deslikea una entrada. **TOKEN**
+- POST [entries/:entryId/photos] - Agregar una foto a una entrada. **TOKEN** 
+- DELETE [/entries/:entryId/photos] -Borra una foto de una entrada. **TOKEN**
+- PUT [/entries/:entryId/resolves] - Marca un problema de accesibilidad como resuelto.
 
