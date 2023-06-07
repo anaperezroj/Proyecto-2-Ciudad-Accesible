@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+const bcrypt = require('bcrypt');
+
 const getDB = require('./getDB');
 
 const main = async () => {
@@ -10,7 +12,7 @@ const main = async () => {
 
     console.log('Borrando tablas...');
     await connection.query('DROP TABLE IF EXISTS likes');
-    await connection.query('DROP TABLE IF EXISTS entryphotos');
+    await connection.query('DROP TABLE IF EXISTS entryPhotos');
     await connection.query('DROP TABLE IF EXISTS entries');
     await connection.query('DROP TABLE IF EXISTS users');
 
@@ -23,8 +25,8 @@ const main = async () => {
                 email VARCHAR(100) UNIQUE NOT NULL,
                 password VARCHAR(100) NOT NULL,
                 role ENUM('admin', 'normal') DEFAULT 'normal',
-                createdAt DATETIME NOT NULL,
-                modifiedAt DATETIME
+                createdAt DATETIME NOT NULL
+
             )
         `);
 
@@ -34,7 +36,7 @@ const main = async () => {
                 title VARCHAR(30) NOT NULL,
                 city VARCHAR(60) NOT NULL,
                 district VARCHAR(30) NOT NULL,
-                neightborhood VARCHAR(60) NOT NULL,
+                neightborhood VARCHAR(60) NOT NULL,                
                 description TEXT NOT NULL,
                 userId INT UNSIGNED NOT NULL,
                 status BOOLEAN,
@@ -48,9 +50,9 @@ const main = async () => {
             CREATE TABLE IF NOT EXISTS entryPhotos (
                 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
                 userId INT UNSIGNED NOT NULL,
+                name VARCHAR(100) NOT NULL,
                 entryId INT UNSIGNED NOT NULL,
                 createdAt DATETIME NOT NULL,
-                modifiedAt DATETIME,
                 FOREIGN KEY (entryId) REFERENCES entries(id)
             )
         `);
@@ -61,13 +63,21 @@ const main = async () => {
                 userId INT UNSIGNED NOT NULL,
                 entryId INT UNSIGNED NOT NULL,
                 createdAt DATETIME NOT NULL,
-                modifiedAt DATETIME,
                 FOREIGN KEY (userId) REFERENCES users(id),
                 FOREIGN KEY (entryId) REFERENCES entries(id)
             )
         `);
 
     console.log('¡Tablas creadas!');
+
+    //Encriptamos contraseña administrador
+
+    const hashedPass = await bcrypt.hash('123456', 10);
+
+    await connection.query(
+      `INSERT INTO users (email, username, password,role,  createdAt) VALUES ('admin@gmail.com', 'admin', '${hashedPass}', 'admin', ?)`,
+      [new Date()]
+    );
   } catch (err) {
     console.error(err);
   } finally {

@@ -14,7 +14,8 @@ const selectAllEntriesQuery = async (keyword = '', userId = 0) => {
                     E.city,
                     E.district,
                     E.description,
-                    E.status
+                    E.neightborhood,
+                    E.status,
                     U.username,
                     E.userId,
                     E.userId = ? AS owner,
@@ -22,19 +23,19 @@ const selectAllEntriesQuery = async (keyword = '', userId = 0) => {
                     E.createdAt
                 FROM entries E
                 INNER JOIN users U ON U.id = E.userId
-                LEFT JOIN likes L ON E.id = L.entryId
-                WHERE E.id = ?
+                LEFT JOIN likes L ON E.id = L.entryId      
                 GROUP BY E.id
                 ORDER BY E.createdAt DESC
             `,
-      [userId, '%${ keyword }%', '%${ keyword }%', '%${ keyword }%']
+      [userId]
     );
 
     // Si el array de entradas tiene alguna entrada obtenemos sus fotos y convertimos
     // a tipo Number la media de votos.
     for (const entry of entries) {
       const [photos] = await connection.query(
-        `SELECT id, name FROM entryPhotos WHERE entryId = ?,`[entry.id]
+        `SELECT id, name FROM entryPhotos WHERE entryId = ?`,
+        [entry.id]
       );
 
       // Agregamos las fotos a la entrada.

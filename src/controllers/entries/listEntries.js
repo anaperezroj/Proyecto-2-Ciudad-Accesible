@@ -1,4 +1,4 @@
-const selectAllEntriesQuery = require('../../db/queries/entries/selectAllEntriesQuery');
+const selectAllEntriesQuery = require('../../models/entries/selectAllEntriesQuery');
 
 const listEntries = async (req, res, next) => {
   try {

@@ -5,6 +5,8 @@ const addEntryPhoto = require('./addEntryPhoto');
 const deleteEntryPhoto = require('./deleteEntryPhoto');
 const markResolved = require('./markResolved');
 const newEntry = require('./newEntry');
+const listEntries = require('./listEntries');
+
 module.exports = {
   getEntry,
   newLike,
@@ -13,4 +15,5 @@ module.exports = {
   deleteEntryPhoto,
   markResolved,
   newEntry,
+  listEntries,
 };
