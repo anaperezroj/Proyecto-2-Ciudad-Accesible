@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+
 const { generateError } = require('../services/helpers');
 
 const authUserOptional = async (req, res, next) => {

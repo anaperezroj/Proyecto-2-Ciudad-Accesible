@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+
 const { generateError } = require('../services/helpers');
 
 const authUser = async (req, res, next) => {

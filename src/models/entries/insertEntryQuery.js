@@ -9,14 +9,18 @@ const insertEntryQuery = async (
   description
 ) => {
   let connection;
+
   try {
     connection = await getDB();
+
     const createdAt = new Date();
+
     // Insertamos la entrada.
     const [entry] = await connection.query(
       `INSERT INTO entries(userId,title, city, neightborhood, district,description, createdAt) VALUES(?,?,?, ?, ?, ?, ?)`,
       [userId, title, city, neightborhood, district, description, createdAt]
     );
+
     // Retornamos la entrada.
     return {
       id: entry.insertId,
@@ -32,4 +36,5 @@ const insertEntryQuery = async (
     if (connection) connection.release();
   }
 };
+
 module.exports = insertEntryQuery;

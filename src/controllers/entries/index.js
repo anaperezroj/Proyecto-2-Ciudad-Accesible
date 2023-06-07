@@ -1,19 +1,19 @@
-const getEntry = require('./getEntry');
-const newLike = require('./newLike');
-const deleteLike = require('./deleteLike');
 const addEntryPhoto = require('./addEntryPhoto');
 const deleteEntryPhoto = require('./deleteEntryPhoto');
+const deleteLike = require('./deleteLike');
+const getEntry = require('./getEntry');
+const listEntries = require('./listEntries');
 const markResolved = require('./markResolved');
 const newEntry = require('./newEntry');
-const listEntries = require('./listEntries');
+const newLike = require('./newLike');
 
 module.exports = {
-  getEntry,
-  newLike,
-  deleteLike,
   addEntryPhoto,
   deleteEntryPhoto,
+  deleteLike,
+  getEntry,
+  listEntries,
   markResolved,
   newEntry,
-  listEntries,
+  newLike,
 };
