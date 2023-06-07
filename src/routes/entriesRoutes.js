@@ -28,6 +28,9 @@ router.post('/entries', authUser, userExists, newEntry);
 //Obtenemos entrada por ID
 router.get('/entries/:entryId', authUserOptional, getEntry);
 
+//Listar entradas
+router.get('/entries/listEntries', authUserOptional, listEntries);
+
 //Dar like a una entrada
 router.post('/entries/:entryId/likes', authUser, userExists, newLike);
 
