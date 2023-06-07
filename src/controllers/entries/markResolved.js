@@ -1,11 +1,10 @@
-const { generateError } = require('../../services/helpers');
-
 //Importamos para marcar problema accesibilidad
 const markAccesibilityResolvedQuery = require('../../models/entries/markAccesibilityResolvedQuery');
 //Importamos para obtener entrada concreta por su id
 const selectEntryByIdQuery = require('../../models/entries/selectEntryByIdQuery');
 
-//
+const { generateError } = require('../../services/helpers');
+
 const markResolved = async (req, res, next) => {
   try {
     //Obtenemos id entrada de los params de la solicitud
