@@ -8,25 +8,25 @@ const selectAllEntriesQuery = async (keyword = '', userId = 0) => {
 
     const [entries] = await connection.query(
       ` 
-                SELECT
-                    E.id,
-                    E.title,
-                    E.city,
-                    E.district,
-                    E.description,
-                    E.neightborhood,
-                    E.status,
-                    U.username,
-                    E.userId,
-                    E.userId = ? AS owner,
-                    COUNT(L.id) AS likes,
-                    E.createdAt
-                FROM entries E
-                INNER JOIN users U ON U.id = E.userId
-                LEFT JOIN likes L ON E.id = L.entryId      
-                GROUP BY E.id
-                ORDER BY E.createdAt DESC
-            `,
+            SELECT
+                E.id,
+                E.title,
+                E.city,
+                E.district,
+                E.description,
+                E.neightborhood,
+                E.status,
+                U.username,
+                E.userId,
+                E.userId = ? AS owner,
+                COUNT(L.id) AS likes,
+                E.createdAt
+            FROM entries E
+            INNER JOIN users U ON U.id = E.userId
+            LEFT JOIN likes L ON E.id = L.entryId      
+            GROUP BY E.id
+            ORDER BY E.createdAt DESC
+        `,
       [userId]
     );
 
