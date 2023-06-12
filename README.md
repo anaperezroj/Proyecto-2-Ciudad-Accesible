@@ -36,7 +36,7 @@ API diseñada para mejorar la accesibilidad en la ciudad, permitiendo a los usua
   - district
   - description
   - userId
-  - status
+  - resolved
   - createdAt
   - modifiedAt
 
@@ -63,7 +63,7 @@ API diseñada para mejorar la accesibilidad en la ciudad, permitiendo a los usua
 
 ### Endpoints Entries:
 
-- POST [/entries] - Crea una entrada (solo admin TIENE **TOKEN**)
+- POST [/entries] - Crea una entrada (solo admin) **TOKEN**
 - GET [/entries] - Retorna el listado de entradas.
 - GET [/entries/:entryId] - Retorna una entrada en concreto.
 - POST [/entries/:entryId/likes] - Dar like a una entrada. **TOKEN**
