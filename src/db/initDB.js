@@ -40,7 +40,7 @@ const main = async () => {
             neightborhood VARCHAR(60) NOT NULL,                
             description TEXT NOT NULL,
             userId INT UNSIGNED NOT NULL,
-            status BOOLEAN,
+            resolved BOOLEAN,
             createdAt DATETIME NOT NULL,
             modifiedAt DATETIME,
             FOREIGN KEY (userId) REFERENCES users(id)

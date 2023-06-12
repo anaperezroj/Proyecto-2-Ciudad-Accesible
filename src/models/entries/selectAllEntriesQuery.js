@@ -15,7 +15,7 @@ const selectAllEntriesQuery = async (keyword = '', userId = 0) => {
                 E.district,
                 E.description,
                 E.neightborhood,
-                E.status,
+                E.resolved,
                 U.username,
                 E.userId,
                 E.userId = ? AS owner,
