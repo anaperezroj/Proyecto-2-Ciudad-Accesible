@@ -16,7 +16,7 @@ const selectEntryByIdQuery = async (entryId, userId = 0) => {
                 E.city,
                 E.district,
                 E.description,
-                E.status,
+                E.resolved,
                 U.username,
                 E.userId,
                 E.userId = ? AS owner,

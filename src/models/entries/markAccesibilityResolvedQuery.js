@@ -8,7 +8,9 @@ const markAccesibilityResolvedQuery = async (entryId) => {
     db = await getDB();
 
     //Actualizamos tabla, columna acc_resolved como true en la fila donde id coincide con entryId
-    await db.query('UPDATE entries SET status = true WHERE id = ?', [entryId]);
+    await db.query('UPDATE entries SET resolved = true WHERE id = ?', [
+      entryId,
+    ]);
   } finally {
     db.release();
   }
