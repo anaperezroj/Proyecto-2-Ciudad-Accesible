@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "1f6dcb6c-b8a3-4010-a98c-fb48a73d129c",
-		"name": "ciudadAccesible",
+		"_postman_id": "585bf479-c9f3-4bcf-aa4c-80ae99053f7d",
+		"name": "ciudadAccesible Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\":\"123456\",\n    \"username\":\"admin\"\n}",
+							"raw": "{\n    \"email\": \"anafer@gmail.com\",\n    \"password\":\"123456Ma$\",\n    \"username\":\"anap\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -43,7 +43,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\":\"123456\"\n}",
+							"raw": "{\n    \"email\": \"anafer@gmail.com\",\n    \"password\":\"123456Ma$\"\n    \n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -72,20 +72,19 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token3}}",
+								"value": "{{token2}}",
 								"type": "default"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/users/3",
+							"raw": "http://localhost:8080/users",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"users",
-								"3"
+								"users"
 							]
 						}
 					},
@@ -188,7 +187,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/entries/2",
+							"raw": "http://localhost:8080/entries/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -196,7 +195,7 @@
 							"port": "8080",
 							"path": [
 								"entries",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -277,7 +276,7 @@
 								{
 									"key": "photo",
 									"type": "file",
-									"src": "/Users/familychinchipopez/Downloads/la-calle-estrecha-en-madrid-111193135.webp"
+									"src": "/home/hacker/Escritorio/Playa_de_La_Caleta_Cadiz.jpg"
 								}
 							]
 						},
@@ -309,7 +308,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/entries/1/photos/1",
+							"raw": "http://localhost:8080/entries/1/photos/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -319,7 +318,7 @@
 								"entries",
 								"1",
 								"photos",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -383,6 +382,11 @@
 		},
 		{
 			"key": "tokenAdmin",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "token2",
 			"value": "",
 			"type": "default"
 		}
