@@ -15,7 +15,7 @@ router.post('/users', newUser);
 // Login de usuario.
 router.post('/users/login', loginUser);
 
-//Obtener información del perfil de un usuario.
-router.get('/users/:userId', getUser);
+//Obtener información de mi usuario.
+router.get('/users', getUser);
 
 module.exports = router;
