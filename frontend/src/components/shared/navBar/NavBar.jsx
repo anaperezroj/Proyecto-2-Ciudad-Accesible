@@ -1,5 +1,7 @@
-import Button from '../button/Button';
 import { NavLink } from 'react-router-dom';
+
+import '../navBar/navBar.css';
+
 function NavBar() {
   return (
     <nav className='nav-bar'>
