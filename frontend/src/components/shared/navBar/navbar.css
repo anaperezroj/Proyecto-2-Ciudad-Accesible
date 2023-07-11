@@ -1,4 +1,49 @@
 nav {
   display: flex;
-  justify-content: space-around;
+}
+/*justify-content: space-around;*/
+div .container-signup {
+  flex-basis: 50%;
+  text-align: center;
+  width: 50%;
+  border: 1px solid #b5bab6;
+  background: rgba(96, 180, 179, 0.763);
+  color: #000000;
+
+  text-decoration: none;
+}
+
+div .container-signup:hover {
+  background-color: rgba(23, 65, 113, 0.123);
+  color: rgb(25, 80, 85);
+  border: 1px solid rgb(42, 31, 171);
+  transition: 0.3s ease all;
+  opacity: 1;
+  color: #000000;
+
+  text-decoration: none;
+}
+div .container-login {
+  flex-basis: 50%;
+  text-align: center;
+  width: 50%;
+  border: 1px solid #b5bab6;
+  background: rgba(126, 221, 219, 0.763);
+  color: #000000;
+
+  text-decoration: none;
+}
+
+div .container-login:hover {
+  background-color: rgba(23, 65, 113, 0.123);
+  color: rgb(99, 106, 106);
+  border: 1px solid rgb(42, 31, 171);
+  transition: 0.3s ease all;
+  opacity: 1;
+  color: #000000;
+
+  text-decoration: none;
+}
+a {
+  background-color: red;
 }
