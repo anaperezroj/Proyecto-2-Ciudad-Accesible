@@ -1,12 +1,13 @@
 import { useState } from 'react';
+import axios from 'axios';
 import './homeSearch.css';
 
 function homeSearch() {
   //Estado buscador
   const [search, setSearch] = useState('');
-  /* const [entries,setEntries]
+  const [entries, setEntries] = useState([]);
 
-  const loadEntries = async (search) => {
+  /*const loadEntries = async (search) => {
     try {
       const response = await searchTodos(search);
       setTodos(response.data.todos);
@@ -20,6 +21,14 @@ function homeSearch() {
     setSearch(e.target.value);
   };
 
+  const searchEntries = async () => {
+    try {
+      const response = await axios.get(`/entries?search=${search}`);
+      setEntries(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const searchButton = () => {
     console.log(search);
   };
@@ -32,9 +41,19 @@ function homeSearch() {
         onChange={handleSearch}
         placeholder='Inicia tu búsqueda'
       ></input>
-      <button className='buttonsearch' onClick={searchButton}>
+      <button className='buttonsearch' onClick={searchEntries}>
         <img src='src/assets/search.png' alt='lupa con lineas' />
       </button>
+      <ul>
+        {entries.map((entry) => (
+          <li key={entry.id}>
+            <h3>{entry.title}</h3>
+            <p>{entry.description}</p>
+            <p>Ciudad: {entry.city}</p>
+            <p>Barrio: {entry.neighborhood}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
