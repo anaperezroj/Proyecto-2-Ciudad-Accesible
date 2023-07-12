@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './homeSearch.css';
 
-function homeSearch({ children }) {
+function homeSearch() {
   //Estado buscador
   const [search, setSearch] = useState('');
   /* const [entries,setEntries]
@@ -24,15 +24,18 @@ function homeSearch({ children }) {
     console.log(search);
   };
   return (
-    <>
+    <div className='container'>
       <input
+        className='searchbar'
         type='text'
         value={search}
         onChange={handleSearch}
         placeholder='Inicia tu búsqueda'
       ></input>
-      <button onClick={searchButton}>buscar</button>
-    </>
+      <button className='buttonsearch' onClick={searchButton}>
+        <img src='src/assets/search.png' alt='lupa con lineas' />
+      </button>
+    </div>
   );
 }
 
