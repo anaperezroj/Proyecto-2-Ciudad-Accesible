@@ -10,6 +10,7 @@ function Home() {
         <h2>Discover your City</h2>
         <p>Discover fun new cities below</p>
       </section>
+      <input type='text'>buscar</input>
     </>
   );
 }
