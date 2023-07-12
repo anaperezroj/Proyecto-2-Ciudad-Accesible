@@ -1,4 +1,5 @@
 import Header from '../../components/header/Header';
+import HomeSearch from '../../components/home-search/HomeSearch';
 
 import './home.css';
 
@@ -10,7 +11,7 @@ function Home() {
         <h2>Discover your City</h2>
         <p>Discover fun new cities below</p>
       </section>
-      <input type='text'>buscar</input>
+      <HomeSearch />
     </>
   );
 }
