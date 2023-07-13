@@ -2,22 +2,35 @@ import { EMAIL_REGEX, MAX_LENGTH_STRING } from '../../utils/constants';
 import Block from '../../components/shared/block/Block';
 import Button from '../../components/shared/button/Button';
 import InputText from '../../components/shared/inputs/InputText';
-import InputPassword from '../../components/shared/inputs/InputPassword';
-import useSignUp from './useSignUp';
+import useProfile from './useProfile';
+import avatar from '../../assets/avatar.png';
 import ErrorPopUp from '../../components/shared/error-pop-up/ErrorPopUp';
 
-import './sign-up.css';
+import './profile.css';
 
-function SignUp() {
+function Profile() {
   const {
-    state: { register, errors, passwordError, errorPopUp },
-    actions: { handleSubmit, onSubmit, setErrorPopUp },
-  } = useSignUp();
+    state: { register, errors, errorPopUp, avatarImg },
+    actions: { handleSubmit, onSubmit, setErrorPopUp, handleOnChangeAvatar },
+  } = useProfile();
 
   return (
     <>
-      <Block text='Registro'>
+      <Block text='Mi perfil'>
         <form onSubmit={handleSubmit(onSubmit)}>
+          <div className='avatar-container'>
+            <img src={avatarImg ? avatarImg : avatar} alt='avatar' />
+            <input
+              type='file'
+              {...register('file', {
+                required: true,
+              })}
+              onChange={handleOnChangeAvatar}
+            />
+          </div>
+          {errors.file?.type === 'required' && (
+            <span className='error'>Campo requerido</span>
+          )}
           <InputText
             label='Nombre'
             register={register('name', {
@@ -51,34 +64,11 @@ function SignUp() {
           <label>Género</label>
           <select {...register('gender', { required: true })}>
             <option value=''>--</option>
-            <option value='Female'>Mujer</option>
-            <option value='Male'>Hombre</option>
+            <option value='female'>Mujer</option>
+            <option value='male'>Hombre</option>
           </select>
           {errors.gender?.type === 'required' && (
             <span className='error'>Campo requerido</span>
-          )}
-
-          <InputPassword
-            label='Contraseña'
-            register={register('password', {
-              required: true,
-              minLength: 8,
-            })}
-            errors={errors}
-            registerName='password'
-          />
-
-          <InputPassword
-            label='Repite contraseña'
-            register={register('repeat-password', {
-              required: true,
-            })}
-            errors={errors}
-            registerName='repeat-password'
-          />
-
-          {passwordError && (
-            <span className='error'>Las contraseñas no coinciden</span>
           )}
 
           <div className='terms-container'>
@@ -103,4 +93,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default Profile;

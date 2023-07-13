@@ -3,21 +3,37 @@ import Block from '../../components/shared/block/Block';
 import Button from '../../components/shared/button/Button';
 import InputText from '../../components/shared/inputs/InputText';
 import InputPassword from '../../components/shared/inputs/InputPassword';
-import useSignUp from './useSignUp';
+import useSignUpAvatar from './useSignUpAvatar';
+import avatar from '../../assets/avatar.png';
 import ErrorPopUp from '../../components/shared/error-pop-up/ErrorPopUp';
 
-import './sign-up.css';
+import './sign-up-avatar.css';
 
-function SignUp() {
+function SignUpAvatar() {
   const {
-    state: { register, errors, passwordError, errorPopUp },
-    actions: { handleSubmit, onSubmit, setErrorPopUp },
-  } = useSignUp();
+    state: { register, errors, passwordError, errorPopUp, avatarImg },
+    actions: { handleSubmit, onSubmit, setErrorPopUp, handleOnChangeAvatar },
+  } = useSignUpAvatar();
+
+  console.log(avatarImg);
 
   return (
     <>
       <Block text='Registro'>
         <form onSubmit={handleSubmit(onSubmit)}>
+          <div className='avatar-container'>
+            <img src={avatarImg ? avatarImg : avatar} alt='avatar' />
+            <input
+              type='file'
+              {...register('file', {
+                required: true,
+              })}
+              onChange={handleOnChangeAvatar}
+            />
+          </div>
+          {errors.file?.type === 'required' && (
+            <span className='error'>Campo requerido</span>
+          )}
           <InputText
             label='Nombre'
             register={register('name', {
@@ -53,6 +69,7 @@ function SignUp() {
             <option value=''>--</option>
             <option value='Female'>Mujer</option>
             <option value='Male'>Hombre</option>
+            <option value='Other'>Otro</option>
           </select>
           {errors.gender?.type === 'required' && (
             <span className='error'>Campo requerido</span>
@@ -103,4 +120,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignUpAvatar;
