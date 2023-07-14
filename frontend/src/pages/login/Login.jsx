@@ -5,9 +5,9 @@ import { EMAIL_REGEX } from '../../utils/constants';
 import Block from '../../components/shared/block/Block';
 import Button from '../../components/shared/button/Button';
 import InputText from '../../components/shared/inputs/InputText';
-import InputPassword from '../../components/shared/inputs/InputPassword';
+import InputPassword from '../../components/shared/inputs/inputPassword';
 import { useAuth } from '../../context/authContext';
-import ErrorPopUp from '../../components/shared/error-pop-up/ErrorPopUp';
+import ErrorPopUp from '../../components/shared/errorPopUp/errorPopUp';
 
 import './login.css';
 
