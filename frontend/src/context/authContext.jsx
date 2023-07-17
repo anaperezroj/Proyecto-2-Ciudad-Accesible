@@ -1,5 +1,5 @@
 import { useContext, createContext, useState } from 'react';
-import { login, signUp, signUpAvatar, updateAccount } from '../services';
+import { login, signUp, signUpAvatar } from '../services';
 import { useNavigate } from 'react-router-dom';
 import { CURRENT_USER_LOCAL_STORAGE } from '../utils/constants';
 
@@ -88,26 +88,27 @@ export function AuthProvider({ children }) {
     navigate('login');
   };
 
-  const updateProfile = async (formData, config) => {
-    try {
-      const response = await updateAccount(formData, config);
-      setUser(response.data.user);
-    } catch (error) {
-      return Promise.reject(error);
-    }
-  };
+  //const updateProfile = async (formData, config) => {
+  //try {
+  //const response = await updateAccount(formData, config);
+  //setUser(response.data.user);
+  //} catch (error) {
+  //return Promise.reject(error);
+  //}
+  //};
 
   // Todo lo que pongamos en la prop value van a ser los datos accesibles
   return (
     <AuthContext.Provider
       value={{
         signIn,
+        login,
         registerUser,
         logOut,
         user,
         isAuthenticated,
         registerUserAvatar,
-        updateProfile,
+        //updateProfile,
       }}
     >
       {children}
