@@ -24,10 +24,9 @@ Este proyecto fue desarrollado utilizando las siguientes tecnologías:
 ## 📌 Funcionalidades Principales
 
 - Los usuarios pueden reportar problemas de accesibilidad en su ciudad.
-- Mapa interactivo para visualizar las áreas que necesitan mejoras.
-- Generación de sugerencias y recomendaciones para mejorar la accesibilidad.
-- Sección de noticias con las últimas iniciativas de accesibilidad a nivel mundial.
-- Posibilidad de colaborar con otros usuarios para resolver problemas.
+- Búsqueda para visualizar las áreas que necesitan mejoras.
+- Generación de sugerencias a través de entradas para mejorar la accesibilidad.
+
 
 ---
 
@@ -66,12 +65,6 @@ Si deseas ejecutar este proyecto localmente, sigue los siguientes pasos:
     ```
 
 5. Abre el navegador y visita `http://localhost:3000` para ver la aplicación en acción.
-
----
-
-## 🛠️ Cómo Contribuir
-
-Las contribuciones son bienvenidas. Si deseas mejorar el proyecto, por favor abre un issue o haz un pull request con tus sugerencias o cambios.
 
 ---
 
